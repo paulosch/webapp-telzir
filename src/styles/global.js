@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import 'react-widgets/dist/css/react-widgets.css';
 
 import colors from './colors';
 
@@ -17,13 +18,17 @@ html, body, #root {
 body{
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
-  background: ${colors.primary};
+  background: ${colors.white};
   font-family: 'Montserrat', sans-serif;
-  color: ${colors.white};
+  color: ${colors.dark};
 }
 
 button {
   cursor: pointer;
+}
+
+p {
+  margin: 0;
 }
 `;
 
