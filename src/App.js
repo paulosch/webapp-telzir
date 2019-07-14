@@ -3,7 +3,7 @@ import './config/reactotron';
 import React from 'react';
 import { Provider } from 'react-redux';
 
-import GlobalStyle from './styles/global';
+import GlobalStyle, { Content } from './styles/global';
 
 import store from './store';
 
@@ -14,8 +14,10 @@ function App() {
   return (
     <Provider store={store}>
       <GlobalStyle />
-      <Main />
-      <Footer />
+      <Content>
+        <Main />
+        <Footer />
+      </Content>
     </Provider>
   );
 }

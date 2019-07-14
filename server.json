@@ -1,17 +1,20 @@
 {
   "plans": [
     {
-      "name": "FaleMais30",
+      "id": 1,
+      "name": "FaleMais 30",
       "minutes": 30,
-      "pc_addition": 0.1
+      "pc_addition": 1
     },
     {
-      "name": "FaleMais60",
+      "id": 2,
+      "name": "FaleMais 60",
       "minutes": 60,
       "pc_addition": 0.1
     },
     {
-      "name": "FaleMais120",
+      "id": 3,
+      "name": "FaleMais 120",
       "minutes": 120,
       "pc_addition": 0.1
     }
