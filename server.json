@@ -1,0 +1,84 @@
+{
+  "plans": [
+    {
+      "id": 1,
+      "name": "FaleMais 30",
+      "minutes": 30,
+      "pc_addition": 1
+    },
+    {
+      "id": 2,
+      "name": "FaleMais 60",
+      "minutes": 60,
+      "pc_addition": 0.1
+    },
+    {
+      "id": 3,
+      "name": "FaleMais 120",
+      "minutes": 120,
+      "pc_addition": 0.1
+    }
+  ],
+  "prices": [
+    {
+      "origin": "011",
+      "destiny": "016",
+      "price": "1.90"
+    },
+    {
+      "origin": "011",
+      "destiny": "017",
+      "price": "1.70"
+    },
+    {
+      "origin": "011",
+      "destiny": "018",
+      "price": "0.90"
+    },
+    {
+      "origin": "016",
+      "destiny": "011",
+      "price": "2.90"
+    },
+    {
+      "origin": "016",
+      "destiny": "017",
+      "price": "1.7"
+    },
+    {
+      "origin": "016",
+      "destiny": "018",
+      "price": "0.9"
+    },
+    {
+      "origin": "017",
+      "destiny": "011",
+      "price": "2.70"
+    },
+    {
+      "origin": "017",
+      "destiny": "016",
+      "price": "1.7"
+    },
+    {
+      "origin": "017",
+      "destiny": "018",
+      "price": "0.9"
+    },
+    {
+      "origin": "018",
+      "destiny": "011",
+      "price": "1.90"
+    },
+    {
+      "origin": "018",
+      "destiny": "016",
+      "price": "1.7"
+    },
+    {
+      "origin": "018",
+      "destiny": "017",
+      "price": "0.9"
+    }
+  ]
+}

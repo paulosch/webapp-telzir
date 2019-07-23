@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import 'react-widgets/dist/css/react-widgets.css';
 
 import colors from './colors';
@@ -30,6 +30,11 @@ button {
 p {
   margin: 0;
 }
+`;
+
+export const Content = styled.div`
+  min-height: 100%;
+  position: relative;
 `;
 
 export default GlobalStyle;

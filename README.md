@@ -1,68 +1,27 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Esse projeto tem como finalidade um teste para e empresa Vizir.
+Foram utilizados algums frameworks como reactJs, redux, redux-saga.
 
-## Available Scripts
+Para o store do fron-end foi utlizada a estrutura redux escalável com ducks organizadas no duck pattern e redux-sauce.
 
-In the project directory, you can run:
+## Funcionalidades
 
-### `npm start`
+A aplicação faz o calculo de economia ao comparar planos de telefonia para a empresa Telzir.
+O usuário deve fornecer o ddd de origem e destino além dos minutos de duração da chamada.
+Será exibido em tela os valores para cada plano disponível e o valor sem o plano.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Para o armazenamento dos valores dos planos e os ddds disponíveis foi utilizado o json server, um framework que simula um banco de dados com arquivo .json.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Iniciar a aplicação
 
-### `npm test`
+Instale as dependências executando o comando "yarn" no terminal na raiz do projeto.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para inicializar o json server abra o terminal na raiz do projeto e digite:
+"json-server server.json -d 500 -p 3001" sem as aspas.
 
-### `npm run build`
+Para inicial a aplicação execute o comando "yarn start"
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Testes
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Instale as dependêncis executando o comando "yarn" no terminal na raiz do projeto caso não tenha feito ainda.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Execute yarn test no terminal na raiz do projeto.

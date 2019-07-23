@@ -13,52 +13,70 @@ export const Description = styled.p`
 
 export const Row = styled(R)``;
 
-export const ColDDD = styled(Col).attrs({
+export const Col3 = styled(Col).attrs({
   col: 12,
-  md: 6
+  md: 4
 })``;
 
-export const Table = styled.table`
+export const Input = styled.input`
   width: 100%;
-  text-align: left;
-  margin-top: 20px;
+  background-color: ${colors.white};
+  border: #ccc 1px solid;
+  border-radius: ${metrics.baseRadius}px;
+  padding: 11px;
+`;
 
-  thead th {
-    font-size: ${typography.size.tableTitle}px;
-    color: ${colors.regular};
-    letter-spacing: ${typography.space.letter}px;
-    font-weight: normal;
-    padding: 5px 10px;
-  }
-
-  tbody td {
-    border-top: 1px solid ${colors.dark};
-    font-size: 13px;
-    padding: 0 10px;
-    line-height: 40px;
+export const ColPlansList = styled(Col).attrs({
+  col: 12,
+  md: 8
+})`
+  ul {
+    margin: ${metrics.baseMargin * 2}px 0;
+    list-style: none;
   }
 `;
 
-export const Item = styled.tr`
-  td {
-    border-top: 1px solid ${colors.ligth};
-    font-size: 13px;
-    padding: 0 10px;
-    line-height: 40px;
-    background: ${colors.ligth};
-    color: #1ed760;
+export const Item = styled.li`
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: ${metrics.baseMargin}px;
+  font-size: ${typography.size.title / 2}px;
+  border-bottom: 1px solid ${colors.ligth};
 
-    &:nth-child(3) {
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    &:last-child {
-      color: ${colors.danger};
-    }
+  span {
+    color: ${colors.secondary};
   }
 
-  &:hover td {
-    background: ${colors.lighter};
+  strong {
+    color: ${colors.primary};
   }
+`;
+
+export const ColBadPrice = styled(Col).attrs({
+  col: 12,
+  md: 4
+})`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: ${metrics.basePadding}px 0;
+
+  span {
+    color: ${colors.danger};
+    font-weight: bold;
+    text-align: center;
+  }
+`;
+
+export const Error = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: ${metrics.basePadding}px;
+  margin-bottom: ${metrics.baseMargin}px;
+  background: ${colors.danger};
+  color: ${colors.white};
+  border-radius: ${metrics.baseRadius}px;
 `;
