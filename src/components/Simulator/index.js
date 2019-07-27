@@ -23,7 +23,7 @@ const Simulator = () => {
     state => state.simulator
   );
 
-  const [minutes, setMinutes] = useState(1);
+  const [minutes, setMinutes] = useState(0);
   const [dddOrigin, setOrigin] = useState();
   const [dddDestiny, setDestiny] = useState();
 
@@ -87,7 +87,9 @@ const Simulator = () => {
           Minutos
           <Input
             type="number"
-            min="1"
+            min="0"
+            max="10000"
+            step={10}
             value={minutes}
             onChange={e => setMinutes(e.target.value)}
           />
