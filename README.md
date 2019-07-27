@@ -1,7 +1,7 @@
 Esse projeto tem como finalidade um teste para e empresa Vizir.
 Foram utilizados algums frameworks como reactJs, redux, redux-saga.
 
-Para o store do fron-end foi utlizada a estrutura redux escalável com ducks organizadas no duck pattern e redux-sauce.
+Para o store do fron-end foi utlizada a estrutura redux escalável com ducks organizadas no duck pattern utilizando redux-sauce.
 
 ## Funcionalidades
 
@@ -18,10 +18,4 @@ Instale as dependências executando o comando "yarn" no terminal na raiz do proj
 Para inicializar o json server abra o terminal na raiz do projeto e digite:
 "json-server server.json -d 500 -p 3001" sem as aspas.
 
-Para inicial a aplicação execute o comando "yarn start"
-
-### Testes
-
-Instale as dependêncis executando o comando "yarn" no terminal na raiz do projeto caso não tenha feito ainda.
-
-Execute yarn test no terminal na raiz do projeto.
+Para iniciar a aplicação execute o comando "yarn start".
