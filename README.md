@@ -13,6 +13,8 @@ Para o armazenamento dos valores dos planos e os ddds disponíveis foi utilizado
 
 ### Iniciar a aplicação
 
+É necessário ter instalado na máquina o node.js e o yarn ou npm.
+
 Instale as dependências executando o comando "yarn" no terminal na raiz do projeto.
 
 Para inicializar o json server abra o terminal na raiz do projeto e digite:
