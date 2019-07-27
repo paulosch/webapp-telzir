@@ -19,7 +19,7 @@ import {
 const Simulator = () => {
   const dispatch = useDispatch();
 
-  const { plans, prices, error, loading } = useSelector(
+  const { plans, error, loading, ddds, pricePerMinute } = useSelector(
     state => state.simulator
   );
 
@@ -31,49 +31,22 @@ const Simulator = () => {
     dispatch(SimulatorActions.getRequest());
   }, [dispatch]);
 
-  const getListOfDdds = origin => {
-    let ddds = prices.map(price => (origin ? price.origin : price.destiny));
-    ddds = [...new Set(ddds)];
-
-    if (origin) {
-      return ddds.filter(ddd => ddd !== dddDestiny).sort();
+  useEffect(() => {
+    if (minutes && dddOrigin && dddDestiny) {
+      dispatch(
+        SimulatorActions.calculateRequest(minutes, dddOrigin, dddDestiny)
+      );
     }
-
-    return ddds.filter(ddd => ddd !== dddOrigin).sort();
-  };
-
-  const calculatePriceWithPlan = plan => {
-    if (minutes <= plan.minutes) {
-      return 0.0;
-    }
-
-    let normalPrice = calculatePriceWithOutPlan(minutes - plan.minutes);
-    const additionalPrice = normalPrice * plan.pc_addition;
-
-    return normalPrice + additionalPrice;
-  };
-
-  const calculatePriceWithOutPlan = (minutesQty, formated = false) => {
-    const price = prices.find(
-      price => price.origin === dddOrigin && price.destiny === dddDestiny
-    );
-
-    if (!price) {
-      return <span>Não há informações para os ddd's informados</span>;
-    }
-
-    if (formated) {
-      return formatPrice(minutesQty * price.price);
-    }
-
-    return minutesQty * price.price;
-  };
+  }, [minutes, dddOrigin, dddDestiny, dispatch]);
 
   const formatPrice = value => {
-    return value.toLocaleString(navigator.language, {
-      style: 'currency',
-      currency: 'BRL'
-    });
+    if (value > -1)
+      return value.toLocaleString(navigator.language, {
+        style: 'currency',
+        currency: 'BRL'
+      });
+
+    return <span>Sem valor definido</span>;
   };
 
   return (
@@ -93,7 +66,7 @@ const Simulator = () => {
         <Col3>
           DDD de origem
           <DropdownList
-            data={getListOfDdds(true)}
+            data={ddds.filter(ddd => ddd !== dddDestiny)}
             busy={loading}
             value={dddOrigin}
             onChange={value => setOrigin(value)}
@@ -103,7 +76,7 @@ const Simulator = () => {
         <Col3>
           DDD de destino
           <DropdownList
-            data={getListOfDdds(false)}
+            data={ddds.filter(ddd => ddd !== dddOrigin)}
             busy={loading}
             value={dddDestiny}
             onChange={value => setDestiny(value)}
@@ -127,7 +100,7 @@ const Simulator = () => {
             {plans.map(plan => (
               <Item key={plan.id}>
                 <span>Plano {plan.name}</span>
-                <strong>{formatPrice(calculatePriceWithPlan(plan))}</strong>
+                <strong>{formatPrice(plan.price)}</strong>
               </Item>
             ))}
           </ul>
@@ -135,7 +108,7 @@ const Simulator = () => {
 
         <ColBadPrice>
           Valor sem plano
-          <span>{calculatePriceWithOutPlan(minutes, true)}</span>
+          <span>{formatPrice(pricePerMinute * minutes)}</span>
         </ColBadPrice>
       </Row>
     </Container>

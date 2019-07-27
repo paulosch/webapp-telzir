@@ -4,7 +4,7 @@
       "id": 1,
       "name": "FaleMais 30",
       "minutes": 30,
-      "pc_addition": 1
+      "pc_addition": 0.1
     },
     {
       "id": 2,
@@ -23,7 +23,7 @@
     {
       "origin": "011",
       "destiny": "016",
-      "price": "1.90"
+      "price": "1.00"
     },
     {
       "origin": "011",
